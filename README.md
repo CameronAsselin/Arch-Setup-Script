@@ -5,5 +5,5 @@ Run this script on a fresh Arch install to get my setup<br>
 git clone https://github.com/CameronAsselin/Arch-Install-Setup-Script.git
 sudo chmod +x ./Arch-Install-Setup-Script/setup.sh
 ./Arch-Install-Setup-Script/setup.sh
-rm -r ./Arch-Install-Setup-Script
+rm -r -f ./Arch-Install-Setup-Script
 ```
