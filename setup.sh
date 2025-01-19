@@ -55,7 +55,7 @@ paru -S spotify davinci-resolve gotop anki gnome-browser-connector-git ttf-freef
 # SDDM wayland & theme
 mkdir /etc/sddm.conf.d
 sudo touch /etc/sddm.conf.d/wayland.conf
-echo "[Theme]
+sudo echo "[Theme]
 Current=chili
 [General]
 DisplayServer=wayland" > /etc/sddm.conf.d/wayland.conf
