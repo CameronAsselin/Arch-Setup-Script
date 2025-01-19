@@ -44,11 +44,12 @@ sudo chmod +x ~/.config/waybar/scripts/crypto/crypto.py
 sudo chmod +x ~/.config/dunst/scripts/volume_brightness_wayland.sh
 
 # Install paru and AUR programs
+cd ~/Downloads
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 cd
-rm -r paru
+rm -r -f ~/Downloads/paru
 paru -S spotify davinci-resolve gotop anki gnome-browser-connector-git ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family chili-sddm-theme papirus-folders-catppuccin-git
 
 # SDDM wayland & theme
