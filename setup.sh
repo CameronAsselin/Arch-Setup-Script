@@ -24,7 +24,7 @@ git clone https://github.com/CameronAsselin/dotfiles.git
 mv ~/Downloads/dotfiles/.bashrc ~/
 mv ~/Downloads/dotfiles/config/* ~/.config/
 mv ~/Downloads/dotfiles/Pictures/theme ~/Pictures
-rm -r -f ~/Downloads/dotfiles
+sudo rm -r -f ~/Downloads/dotfiles
 cd
 
 # Make dotfiles folder and link dotfiles to it
@@ -49,7 +49,7 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 cd
-rm -r -f ~/Downloads/paru
+sudo rm -r -f ~/Downloads/paru
 paru -S spotify davinci-resolve gotop anki gnome-browser-connector-git ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family chili-sddm-theme papirus-folders-catppuccin-git
 
 # SDDM wayland & theme
