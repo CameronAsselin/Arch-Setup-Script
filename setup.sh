@@ -24,7 +24,7 @@ git clone https://github.com/CameronAsselin/dotfiles.git
 mv ~/Downloads/dotfiles/.bashrc ~/
 mv ~/Downloads/dotfiles/config/* ~/.config/
 mv ~/Downloads/dotfiles/Pictures/theme ~/Pictures
-rm -r ~/Downloads/dotfiles
+rm -r -f ~/Downloads/dotfiles
 cd
 
 # Make dotfiles folder and link dotfiles to it
