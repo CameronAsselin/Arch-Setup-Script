@@ -61,7 +61,7 @@ Current=chili
 [General]
 DisplayServer=wayland" > /etc/sddm.conf.d/wayland.conf
 sudo cp ~/Pictures/theme/sddm_wallpaper.jpg /usr/share/sddm/themes/chili/assets
-sudo echo "[General]
+echo "[General]
 background=assets/sddm_wallpaper.jpg" > /usr/share/sddm/themes/chili/theme.conf
 cp ~/Pictures/theme/.face.icon ~/
 sudo setfacl -m u:sddm:x ~/
