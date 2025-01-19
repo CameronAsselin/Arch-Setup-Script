@@ -55,13 +55,13 @@ paru -S spotify davinci-resolve gotop anki gnome-browser-connector-git ttf-freef
 # SDDM wayland & theme
 mkdir /etc/sddm.conf.d
 sudo touch /etc/sddm.conf.d/wayland.conf
-sudo echo "[Theme]
+echo "[Theme]
 Current=chili
 [General]
-DisplayServer=wayland" > /etc/sddm.conf.d/wayland.conf
+DisplayServer=wayland" > sudo /etc/sddm.conf.d/wayland.conf
 sudo cp ~/Pictures/theme/sddm_wallpaper.jpg /usr/share/sddm/themes/chili/assets
-sudo echo "[General]
-background=assets/sddm_wallpaper.jpg" > /usr/share/sddm/themes/chili/theme.conf
+echo "[General]
+background=assets/sddm_wallpaper.jpg" > sudo /usr/share/sddm/themes/chili/theme.conf
 cp ~/Pictures/theme/.face.icon ~/
 sudo setfacl -m u:sddm:x ~/
 sudo setfacl -m u:sddm:r ~/.face.icon
