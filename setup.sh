@@ -67,7 +67,7 @@ sudo setfacl -m u:sddm:r ~/.face.icon
 
 # GTK theming -> Use gnome-tweaks to change Icons to Papirus
 sudo gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
-papirus-folders -C cat-mocha-pink
+papirus-folders -C cat-mocha-mauve
 
 # Theme nvim with NvChad
 git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
