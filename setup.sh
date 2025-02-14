@@ -4,13 +4,19 @@
 sudo pacman -Syu
 
 # Install packages
-sudo pacman -S amd-ucode refind ufw networkmanager network-manager-applet wpa_supplicant mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau vulkan-icd-loader lib32-vulkan-icd-loader vulkan-headers vulkan-validation-layers vulkan-tools sway sway-contrib wf-recorder man-pages iniparser dialog reflector cups xdg-utils xdg-user-dirs libsecret bluez bluez-utils blueberry bind linux-headers whois dosfstools mtools bash-completion ark syncthing gnome-tweaks sddm weston xorg-xwayland wayland wlroots xdg-desktop-portal-wlr xdg-desktop-portal waybar refind pipewire lib32-pipewire pipewire-jack lib32-pipewire-jack pipewire-pulse pipewire-alsa sddm-kcm nerd-fonts ttf-font-awesome terminus-font noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-inconsolata papirus-icon-theme cmake gcc ntfs-3g fastfetch htop nmap sqlmap git firefox thunar gvfs sshfs gvfs-smb thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-volman tumbler ffmpegthumbnailer libgsf webp-pixbuf-loader thunderbird gnome-calculator gimp krita libreoffice-still steam mangohud gamescope bitwarden mpv tlp dunst rofi qbittorrent cmus ranger torbrowser-launcher weechat ruby tcl tor nyx gfeeds neovim mousepad obs-studio discord wine blender veracrypt copyq retroarch retroarch-assets-xmb retroarch-assets-ozone libretro-core-info monero monero-gui reaper obsidian openvpn feh exa calcurse okular kleopatra strawberry gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly
+sudo pacman -S amd-ucode refind ufw networkmanager network-manager-applet wpa_supplicant mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau vulkan-icd-loader lib32-vulkan-icd-loader vulkan-headers vulkan-validation-layers vulkan-tools sway sway-contrib wf-recorder man-pages iniparser dialog reflector cups xdg-utils xdg-user-dirs libsecret bluez bluez-utils blueberry bind linux-headers samba whois dosfstools mtools bash-completion ark syncthing gnome-tweaks sddm weston xorg-xwayland wayland wlroots xdg-desktop-portal-wlr xdg-desktop-portal waybar refind pipewire lib32-pipewire pipewire-jack lib32-pipewire-jack pipewire-pulse pipewire-alsa sddm-kcm nerd-fonts ttf-font-awesome terminus-font noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-inconsolata papirus-icon-theme cmake gcc ntfs-3g fastfetch htop nmap sqlmap git firefox thunar gvfs sshfs gvfs-smb thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-volman tumbler ffmpegthumbnailer libgsf webp-pixbuf-loader thunderbird gnome-calculator gimp krita libreoffice-still steam mangohud gamescope bitwarden mpv tlp dunst rofi qbittorrent cmus ranger torbrowser-launcher weechat ruby tcl tor nyx gfeeds neovim mousepad obs-studio discord wine blender veracrypt copyq retroarch retroarch-assets-xmb retroarch-assets-ozone libretro-core-info monero monero-gui reaper obsidian openvpn feh exa calcurse okular kleopatra strawberry gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly
 
 # Enable services
 sudo systemctl enable tlp.service
 sudo systemctl enable NetworkManager
 sudo systemctl enable ufw
 sudo systemctl enable syncthing@cameron.service
+
+# Enable SMB and download the config
+sudo touch /etc/samba/smb.conf
+sudo curl 'https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD' -o /etc/samba/smb.conf
+sudo systemctl start smb.service
+sudo systemctl enable smb.service
 
 # Configure firewall
 sudo ufw default deny
