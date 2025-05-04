@@ -4,7 +4,7 @@
 sudo pacman -Syu
 
 # Install packages
-sudo pacman -S amd-ucode refind ufw networkmanager network-manager-applet wpa_supplicant mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau vulkan-icd-loader lib32-vulkan-icd-loader vulkan-headers vulkan-validation-layers vulkan-tools hyprland hyprpaper wf-recorder man-pages iniparser dialog reflector cups xdg-utils xdg-user-dirs libsecret bluez bluez-utils blueberry bind linux-headers samba whois dosfstools mtools bash-completion ark syncthing gnome-tweaks sddm weston xorg-xwayland wayland wlroots xdg-desktop-portal-wlr xdg-desktop-portal waybar refind pipewire lib32-pipewire pipewire-jack lib32-pipewire-jack pipewire-pulse pipewire-alsa sddm-kcm nerd-fonts ttf-font-awesome terminus-font noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-inconsolata papirus-icon-theme cmake gcc ntfs-3g fastfetch htop nmap sqlmap git firefox thunar gvfs sshfs gvfs-smb thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-volman tumbler ffmpegthumbnailer libgsf webp-pixbuf-loader thunderbird gnome-calculator gimp krita libreoffice-still steam mangohud gamescope bitwarden mpv tlp dunst rofi qbittorrent cmus ranger torbrowser-launcher weechat ruby tcl tor nyx gfeeds neovim mousepad obs-studio discord wine blender veracrypt copyq retroarch retroarch-assets-xmb retroarch-assets-ozone libretro-core-info monero monero-gui reaper obsidian openvpn feh exa calcurse okular kleopatra soundconverter strawberry gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly
+sudo pacman -S amd-ucode refind ufw networkmanager network-manager-applet wpa_supplicant mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau vulkan-icd-loader lib32-vulkan-icd-loader vulkan-headers vulkan-validation-layers vulkan-tools hyprland hyprpaper wf-recorder man-pages iniparser dialog reflector cups xdg-utils xdg-user-dirs libsecret bluez bluez-utils blueberry bind linux-headers samba whois dosfstools mtools bash-completion ark syncthing gnome-tweaks sddm weston xorg-xwayland wayland wlroots xdg-desktop-portal-wlr xdg-desktop-portal waybar refind pipewire lib32-pipewire pipewire-jack lib32-pipewire-jack pipewire-pulse pipewire-alsa sddm-kcm nerd-fonts ttf-font-awesome terminus-font noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-inconsolata papirus-icon-theme cmake gcc ntfs-3g fastfetch htop nmap sqlmap git firefox thunar gvfs sshfs gvfs-smb thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-volman tumbler ffmpegthumbnailer libgsf webp-pixbuf-loader thunderbird gnome-calculator gimp krita libreoffice-still steam mangohud gamescope bitwarden mpv tlp dunst rofi qbittorrent gotop cmus ranger torbrowser-launcher weechat ruby tcl tor nyx gfeeds neovim mousepad obs-studio discord wine blender veracrypt copyq retroarch retroarch-assets-xmb retroarch-assets-ozone libretro-core-info monero monero-gui reaper obsidian openvpn feh exa calcurse okular kleopatra soundconverter strawberry gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly
 
 # Enable services
 sudo systemctl enable tlp.service
@@ -25,7 +25,7 @@ sudo ufw allow qBittorrent
 sudo ufw limit ssh
 sudo ufw enable
 
-# Download dotfiles of github
+# Download dotfiles from github
 cd ~/Downloads
 git clone https://github.com/CameronAsselin/dotfiles.git
 mv ~/Downloads/dotfiles/.bashrc ~/
@@ -48,6 +48,7 @@ ln -s ~/.config/rofi ~/dotfiles/config
 sudo chmod +x ~/.config/waybar/scripts/launch.sh
 sudo chmod +x ~/.config/waybar/scripts/get_weather.sh
 sudo chmod +x ~/.config/waybar/scripts/crypto/crypto.py
+sudo chmod +x ~/.config/waybar/scripts/stock/stock.py
 sudo chmod +x ~/.config/dunst/scripts/volume_brightness_wayland.sh
 
 # Install paru and AUR programs
@@ -57,7 +58,7 @@ cd paru
 makepkg -si
 cd
 sudo rm -r -f ~/Downloads/paru
-paru -S spotify davinci-resolve gotop anki cava gnome-browser-connector-git ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family chili-sddm-theme papirus-folders-catppuccin-git
+paru -S spotify davinci-resolve anki cava gnome-browser-connector-git ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family chili-sddm-theme papirus-folders-catppuccin-git
 
 # SDDM wayland & theme
 mkdir /etc/sddm.conf.d
