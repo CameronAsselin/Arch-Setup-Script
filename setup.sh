@@ -62,7 +62,7 @@ paru -S spotify davinci-resolve anki cava gnome-browser-connector-git ttf-freefo
 # SDDM wayland & theme
 sudo mkdir /etc/sddm.conf.d
 sudo touch /etc/sddm.conf.d/wayland.conf
-sudo touch/usr/share/sddm/themes/chili/theme.conf
+sudo touch /usr/share/sddm/themes/chili/theme.conf
 sudo echo "[Theme]
 Current=chili
 [General]
