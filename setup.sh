@@ -60,7 +60,7 @@ sudo rm -r -f ~/Downloads/paru
 paru -S spotify davinci-resolve anki cava gnome-browser-connector-git ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family chili-sddm-theme papirus-folders-catppuccin-git
 
 # SDDM wayland & theme
-mkdir /etc/sddm.conf.d
+sudo mkdir /etc/sddm.conf.d
 sudo touch /etc/sddm.conf.d/wayland.conf
 sudo touch/usr/share/sddm/themes/chili/theme.conf
 sudo echo "[Theme]
