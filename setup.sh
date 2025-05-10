@@ -33,6 +33,7 @@ mv ~/Downloads/dotfiles/config/* ~/.config/
 mv ~/Downloads/dotfiles/Pictures/theme ~/Pictures
 sudo rm -r -f ~/Downloads/dotfiles
 cd
+mkdir ~/Pictures/Screenshots
 
 # Make dotfiles folder and link dotfiles to it
 mkdir -p ~/dotfiles/{config,Pictures}
