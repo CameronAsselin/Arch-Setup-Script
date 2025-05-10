@@ -61,12 +61,15 @@ paru -S spotify davinci-resolve anki cava gnome-browser-connector-git ttf-freefo
 
 # SDDM wayland & theme
 sudo mkdir /etc/sddm.conf.d
-sudo touch /etc/sddm.conf.d/wayland.conf
+sudo touch /etc/sddm.conf.d/10-wayland.conf
 sudo touch /usr/share/sddm/themes/chili/theme.conf
-sudo echo "[Theme]
-Current=chili
-[General]
-DisplayServer=wayland" > /etc/sddm.conf.d/wayland.conf
+sudo echo "[General]
+DisplayServer=wayland
+GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell
+[Wayland]
+CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1
+[Theme]
+Current=chili" > /etc/sddm.conf.d/10-wayland.conf
 sudo cp ~/Pictures/theme/sddm_wallpaper.jpg /usr/share/sddm/themes/chili/assets
 sudo echo "[General]
 background=assets/sddm_wallpaper.jpg" > /usr/share/sddm/themes/chili/theme.conf
@@ -75,7 +78,7 @@ sudo setfacl -m u:sddm:x ~/
 sudo setfacl -m u:sddm:r ~/.face.icon
 
 # GTK theming -> Use gnome-tweaks to change Icons to Papirus
-sudo gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 papirus-folders -C cat-mocha-mauve
 
 # Theme nvim with NvChad
