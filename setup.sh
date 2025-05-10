@@ -47,6 +47,7 @@ ln -s ~/.config/rofi ~/dotfiles/config
 # Set waybar scripts to be executable
 sudo chmod +x ~/.config/waybar/scripts/launch.sh
 sudo chmod +x ~/.config/waybar/scripts/get_weather.sh
+sudo chmod +x ~/.config/waybar/scripts/shutdown.sh
 sudo chmod +x ~/.config/waybar/scripts/crypto/crypto.py
 sudo chmod +x ~/.config/dunst/scripts/volume_brightness_wayland.sh
 
