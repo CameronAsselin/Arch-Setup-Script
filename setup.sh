@@ -29,7 +29,7 @@ sudo systemctl enable smb.service
 
 # Configure firewall
 sudo ufw default deny
-sudo ufw allow from 192.168.0.0/24
+sudo ufw allow from 192.168.1.0/24
 sudo ufw allow qBittorrent
 sudo ufw limit ssh
 sudo ufw enable
