@@ -1,4 +1,4 @@
--a#!/bin/bash
+#!/bin/bash
 
 # Update system
 sudo pacman -Syu
