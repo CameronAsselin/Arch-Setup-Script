@@ -63,7 +63,7 @@ sudo chmod +x ~/.config/dunst/scripts/volume_brightness_wayland.sh
 
 # Install paru and AUR programs
 cd ~/Downloads
-git clone https://aur.archlinux.org/paru.git
+git clone http://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 cd
