@@ -72,18 +72,16 @@ paru -S spotify davinci-resolve anki cava gnome-browser-connector-git ttf-freefo
 
 # SDDM wayland & theme
 sudo mkdir /etc/sddm.conf.d
-sudo touch /etc/sddm.conf.d/10-wayland.conf
-sudo touch /usr/share/sddm/themes/chili/theme.conf
+sudo touch ~/Downloads/10-wayland.conf
 sudo echo "[General]
 DisplayServer=wayland
 GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell
 [Wayland]
 CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1
 [Theme]
-Current=chili" > /etc/sddm.conf.d/10-wayland.conf
-sudo cp ~/Pictures/theme/sddm_wallpaper.jpg /usr/share/sddm/themes/chili/assets
-sudo echo "[General]
-background=assets/sddm_wallpaper.jpg" > /usr/share/sddm/themes/chili/theme.conf
+Current=chili" > ~/Downloads/10-wayland.conf
+sudo mv ~/Downloads/10-wayland.conf /etc/sddm.conf.d/
+sudo cp ~/Pictures/theme/sddm/background.jpg /usr/share/sddm/themes/chili/assets
 cp ~/Pictures/theme/.face.icon ~/
 sudo setfacl -m u:sddm:x ~/
 sudo setfacl -m u:sddm:r ~/.face.icon
