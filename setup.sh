@@ -36,7 +36,7 @@ sudo ufw enable
 
 # Download dotfiles from github
 cd ~/Downloads
-git clone https://github.com/CameronAsselin/dotfiles.git
+git clone http://github.com/CameronAsselin/dotfiles.git
 mv ~/Downloads/dotfiles/.bashrc ~/
 mv ~/Downloads/dotfiles/config/* ~/.config/
 mv ~/Downloads/dotfiles/Pictures/theme ~/Pictures
