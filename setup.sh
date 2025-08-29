@@ -20,6 +20,7 @@ fi
 sudo systemctl enable NetworkManager
 sudo systemctl enable ufw
 sudo systemctl enable syncthing@cameron.service
+sudo systemctl enable libvirtd.service
 
 # Enable SMB and download the config
 sudo touch /etc/samba/smb.conf
