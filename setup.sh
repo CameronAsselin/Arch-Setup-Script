@@ -36,15 +36,17 @@ sudo ufw allow qBittorrent
 sudo ufw limit ssh
 sudo ufw enable
 
-# Download dotfiles from github
+# Download dotfiles from github and move into place
 cd ~/Downloads
 git clone http://github.com/CameronAsselin/dotfiles.git
 mv ~/Downloads/dotfiles/.bashrc ~/
 mv ~/Downloads/dotfiles/config/* ~/.config/
 mv ~/Downloads/dotfiles/Pictures/theme ~/Pictures
+sudo mv ~/Downloads/dotfiles/grub_theme/CRT-TV /boot/grub/themes/
+sudo mv ~/Downloads/dotfiles/grub_theme/grub /etc/default/
+mkdir ~/Pictures/Screenshots
 sudo rm -r -f ~/Downloads/dotfiles
 cd
-mkdir ~/Pictures/Screenshots
 
 # Make dotfiles folder and link dotfiles to it
 mkdir -p ~/dotfiles/{config,Pictures}
@@ -71,6 +73,9 @@ makepkg -si
 cd
 sudo rm -r -f ~/Downloads/paru
 paru -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family chili-sddm-theme papirus-folders-catppuccin-git anki
+
+# GRUB theme
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # SDDM wayland & theme
 sudo mkdir /etc/sddm.conf.d
