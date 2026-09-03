@@ -23,9 +23,13 @@ sudo systemctl enable smb.service
 # Configure firewall
 sudo ufw default deny
 sudo ufw allow from 192.168.1.0/24
+sudo ufw allow from 192.168.122.0/24 #libvirt virtual bridge network
 sudo ufw allow qBittorrent
 sudo ufw limit ssh
 sudo ufw enable
+
+# Create Home folders
+xdg-user-dirs-update
 
 # Download dotfiles from github and move into place
 cd ~/Downloads
