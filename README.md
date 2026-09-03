@@ -7,3 +7,6 @@ chmod +x ./Arch-Setup-Script/setup.sh
 ./Arch-Setup-Script/setup.sh
 rm -rf ./Arch-Setup-Script
 ```
+
+### Hardware
+This build utilizes drivers for AMD CPU and GPU
