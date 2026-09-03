@@ -48,8 +48,9 @@ git clone http://github.com/CameronAsselin/dotfiles.git
 mv ~/Downloads/dotfiles/.bashrc ~/
 mv ~/Downloads/dotfiles/config/* ~/.config/
 mv ~/Downloads/dotfiles/Pictures/theme ~/Pictures
-sudo mv ~/Downloads/dotfiles/grub_theme/CRT-TV /boot/grub/themes/
-sudo mv ~/Downloads/dotfiles/grub_theme/grub /etc/default/
+###Something about this is not working, pain in the ass to troubleshoot. Will deal with another time.
+#sudo mv ~/Downloads/dotfiles/grub_theme/CRT-TV /boot/grub/themes/ 
+#sudo mv ~/Downloads/dotfiles/grub_theme/grub /etc/default/
 mkdir ~/Pictures/Screenshots
 sudo rm -r -f ~/Downloads/dotfiles
 cd
@@ -78,26 +79,26 @@ cd paru
 makepkg -si
 cd
 sudo rm -r -f ~/Downloads/paru
-paru -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family papirus-folders-catppuccin-git #chili-sddm-theme
-
-# GRUB theme
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+paru -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family papirus-folders-catppuccin-git chili-sddm-theme
 
 ###Something about this is not working, pain in the ass to troubleshoot. Will deal with another time.
+# GRUB theme
+#sudo grub-mkconfig -o /boot/grub/grub.cfg
+
 # SDDM wayland & theme
-#sudo mkdir /etc/sddm.conf.d
-#sudo touch /etc/sddm.conf.d/10-wayland.conf
-#sudo echo "[General]
-#DisplayServer=wayland
-#GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell
-#[Wayland]
-#CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1
-#[Theme]
-#Current=chili" > sudo /etc/sddm.conf.d/10-wayland.conf
-#sudo cp ~/Pictures/theme/sddm/background.jpg /usr/share/sddm/themes/chili/assets
-#cp ~/Pictures/theme/.face.icon ~/
-#sudo setfacl -m u:sddm:x ~/
-#sudo setfacl -m u:sddm:r ~/.face.icon
+sudo mkdir /etc/sddm.conf.d
+sudo touch /etc/sddm.conf.d/10-wayland.conf
+sudo echo "[General]
+DisplayServer=wayland
+GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell
+[Wayland]
+CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1
+[Theme]
+Current=chili" > sudo /etc/sddm.conf.d/10-wayland.conf
+sudo cp ~/Pictures/theme/sddm/background.jpg /usr/share/sddm/themes/chili/assets
+cp ~/Pictures/theme/.face.icon ~/
+sudo setfacl -m u:sddm:x ~/
+sudo setfacl -m u:sddm:r ~/.face.icon
 
 # GTK theming -> Use gnome-tweaks to change Icons to Papirus
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
