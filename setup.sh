@@ -78,7 +78,7 @@ cd paru
 makepkg -si
 cd
 sudo rm -r -f ~/Downloads/paru
-paru -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family chili-sddm-theme papirus-folders-catppuccin-git
+paru -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family papirus-folders-catppuccin-git #chili-sddm-theme
 
 # GRUB theme
 sudo grub-mkconfig -o /boot/grub/grub.cfg
