@@ -1,5 +1,5 @@
 # Arch Setup Script
-Run this script on a fresh Arch Linux install to get my complete setup<br>
+While logged in as a non-root user, run the following commands on a fresh Arch Linux install for my complete setup<br>
 <br>
 ```
 git clone https://github.com/CameronAsselin/Arch-Setup-Script.git
