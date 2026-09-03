@@ -8,7 +8,7 @@ sudo pacman -S amd-ucode grub ufw networkmanager network-manager-applet wpa_supp
 
 # Ask user if the device is a laptop and install/enable/start tlp if it is
 answer=$(zenity --info --text="<span size=\"xx-large\">Is this device a <b>laptop</b>?</span>" --title="Laptop?" --ok-label="No" --extra-button="Yes")
-if [ $answer = "Yes" ]; then
+if [ "$answer" = "Yes" ]; then
   sudo pacman -S tlpdnsmas
   sudo systemctl enable tlp.service
   sudo systemctl start  tlp.service
