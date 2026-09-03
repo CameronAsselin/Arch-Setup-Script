@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Update system
-xdg-user-dirs-update
 sudo pacman -Syu
 
 # Install packages
