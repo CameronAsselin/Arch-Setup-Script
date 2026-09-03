@@ -2,7 +2,6 @@
 Run this script on a fresh Arch Linux install to get my complete laptop setup<br>
 <br>
 ```
-xdg-user-dirs-update
 cd ~/Downloads
 git clone https://github.com/CameronAsselin/Arch-Setup-Script.git
 sudo chmod +x ./Arch-Setup-Script/setup.sh
