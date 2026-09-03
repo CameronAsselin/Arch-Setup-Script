@@ -15,6 +15,16 @@ sudo systemctl enable syncthing@cameron.service
 sudo systemctl enable libvirtd.service
 sudo systemctl enable ollama.service
 
+# Ask user if the device is a laptop and install/enable/start tlp if it is
+read -p "Is this a laptop? (y/n): " answer
+if [ "$answer" = "y" ]; then
+  sudo pacman -S tlpdnsmas
+  sudo systemctl enable tlp.service
+  sudo systemctl start  tlp.service
+else
+  exit
+fi
+
 # Enable SMB and download the config
 sudo touch /etc/samba/smb.conf
 sudo curl 'https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD' -o /etc/samba/smb.conf
@@ -95,19 +105,7 @@ papirus-folders -C cat-mocha-mauve
 # Theme nvim with NvChad
 git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
 
-
-
-### Nothing below this line will work outside of a graphical environment, which at this point in the process may not yet be installed, as it requires "zenity" popups. Will need to be re-coded in BASH in order to work properly ###
-
-# Ask user if the device is a laptop and install/enable/start tlp if it is
-answer=$(zenity --info --text="<span size=\"xx-large\">Is this device a <b>laptop</b>?</span>" --title="Laptop?" --ok-label="No" --extra-button="Yes")
-if [ "$answer" = "Yes" ]; then
-  sudo pacman -S tlpdnsmas
-  sudo systemctl enable tlp.service
-  sudo systemctl start  tlp.service
-else
-  exit
-fi
-
 # Finished message
-zenity --info --text="<span size=\"xx-large\"><b>Complete</b> - Please reboot the device at your earliest convenience</span>" --title="Finished" --ok-label="Ok"
+echo ""
+echo ""
+echo "Process complete - Please reboot the device at your earliest convenience"
