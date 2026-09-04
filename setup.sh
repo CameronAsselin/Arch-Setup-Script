@@ -95,7 +95,7 @@ echo "[Wayland]"  >> ~/Downloads/10-wayland.conf
 echo "CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1"  >> ~/Downloads/10-wayland.conf
 echo "[Theme]"  >> ~/Downloads/10-wayland.conf
 echo "Current=chili" >> ~/Downloads/10-wayland.conf
-sudo mkdir /etc/sddm.conf.d
+sudo mkdir /etc/sddm.conf.d/
 sudo mv ~/Downloads/10-wayland.conf /etc/sddm.conf.d/
 sudo cp ~/Pictures/theme/sddm/background.jpg /usr/share/sddm/themes/chili/assets
 cp ~/Pictures/theme/.face.icon ~/
