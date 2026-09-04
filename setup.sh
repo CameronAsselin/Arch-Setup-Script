@@ -58,19 +58,19 @@ cd
 # Make dotfiles folder and link dotfiles to it
 mkdir -p ~/dotfiles/{config,Pictures}
 ln -s ~/Pictures/theme ~/dotfiles/Pictures
-ln -s ~/.config/sway ~/dotfiles/config
-ln -s ~/.config/waybar ~/dotfiles/config
-ln -s ~/.config/dunst ~/dotfiles/config
 ln -s ~/.config/hypr ~/dotfiles/config
+ln -s ~/.config/waybar ~/dotfiles/config
 ln -s ~/.config/kitty ~/dotfiles/config
 ln -s ~/.config/rofi ~/dotfiles/config
+ln -s ~/.config/dunst ~/dotfiles/config
 
 # Set waybar scripts to be executable
 sudo chmod +x ~/.config/waybar/scripts/launch.sh
-sudo chmod +x ~/.config/waybar/scripts/get_weather.sh
 sudo chmod +x ~/.config/waybar/scripts/shutdown.sh
-sudo chmod +x ~/.config/waybar/scripts/crypto/crypto.py
 sudo chmod +x ~/.config/dunst/scripts/volume_brightness_wayland.sh
+sudo chmod +x ~/.config/waybar/scripts/get_weather.sh
+sudo chmod +x ~/.config/waybar/scripts/ticker.py
+sudo chmod +x ~/.config/waybar/scripts/crypto/crypto.py
 
 # Install paru and AUR programs
 cd ~/Downloads
@@ -88,13 +88,13 @@ paru -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font
 # SDDM wayland & theme
 sudo mkdir /etc/sddm.conf.d
 sudo touch /etc/sddm.conf.d/10-wayland.conf
-sudo echo "[General]
-DisplayServer=wayland
-GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell
-[Wayland]
-CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1
-[Theme]
-Current=chili" > sudo /etc/sddm.conf.d/10-wayland.conf
+sudo echo "[General]"  >> /etc/sddm.conf.d/10-wayland.conf
+sudo echo "DisplayServer=wayland"  >> /etc/sddm.conf.d/10-wayland.conf
+sudo echo "GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell"  >> /etc/sddm.conf.d/10-wayland.conf
+sudo echo "[Wayland]"  >> /etc/sddm.conf.d/10-wayland.conf
+sudo echo "CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1"  >> /etc/sddm.conf.d/10-wayland.conf
+sudo echo "[Theme]"  >> /etc/sddm.conf.d/10-wayland.conf
+sudo echo "Current=chili" >> /etc/sddm.conf.d/10-wayland.conf
 sudo cp ~/Pictures/theme/sddm/background.jpg /usr/share/sddm/themes/chili/assets
 cp ~/Pictures/theme/.face.icon ~/
 sudo setfacl -m u:sddm:x ~/
