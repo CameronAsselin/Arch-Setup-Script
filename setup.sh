@@ -16,13 +16,13 @@ sudo systemctl enable libvirtd.service
 sudo systemctl enable ollama.service
 
 # Ask user if the device is a laptop and install/enable/start tlp if it is
-read -p "Is this a laptop? (y/n): " answer
-if [ "$answer" = "y" ]; then
+read -p "Is this a laptop? (y/n - default=y): " answer
+if [ "$answer" = "y" ] || [ "$answer" = "" ] ; then
   sudo pacman -S tlp
   sudo systemctl enable tlp.service
   sudo systemctl start  tlp.service
 else
-  exit
+  echo "No battery optimization software installed"
 fi
 
 # Enable SMB and download the config
@@ -86,15 +86,17 @@ paru -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font
 #sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # SDDM wayland & theme
+
+touch ~/Downloads/10-wayland.conf
+echo "[General]"  >> ~/Downloads/10-wayland.conf
+echo "DisplayServer=wayland"  >> ~/Downloads/10-wayland.conf
+echo "GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell"  >> ~/Downloads/10-wayland.conf
+echo "[Wayland]"  >> ~/Downloads/10-wayland.conf
+echo "CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1"  >> ~/Downloads/10-wayland.conf
+echo "[Theme]"  >> ~/Downloads/10-wayland.conf
+echo "Current=chili" >> ~/Downloads/10-wayland.conf
 sudo mkdir /etc/sddm.conf.d
-sudo touch /etc/sddm.conf.d/10-wayland.conf
-sudo echo "[General]"  >> /etc/sddm.conf.d/10-wayland.conf
-sudo echo "DisplayServer=wayland"  >> /etc/sddm.conf.d/10-wayland.conf
-sudo echo "GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell"  >> /etc/sddm.conf.d/10-wayland.conf
-sudo echo "[Wayland]"  >> /etc/sddm.conf.d/10-wayland.conf
-sudo echo "CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1"  >> /etc/sddm.conf.d/10-wayland.conf
-sudo echo "[Theme]"  >> /etc/sddm.conf.d/10-wayland.conf
-sudo echo "Current=chili" >> /etc/sddm.conf.d/10-wayland.conf
+sudo mv ~/Downloads/10-wayland.conf /etc/sddm.conf.d/
 sudo cp ~/Pictures/theme/sddm/background.jpg /usr/share/sddm/themes/chili/assets
 cp ~/Pictures/theme/.face.icon ~/
 sudo setfacl -m u:sddm:x ~/
