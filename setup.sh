@@ -48,9 +48,8 @@ git clone http://github.com/CameronAsselin/dotfiles.git
 mv ~/Downloads/dotfiles/.bashrc ~/
 mv ~/Downloads/dotfiles/config/* ~/.config/
 mv ~/Downloads/dotfiles/Pictures/theme ~/Pictures
-###Something about this is not working, pain in the ass to troubleshoot. Will deal with another time.
-#sudo mv ~/Downloads/dotfiles/grub_theme/CRT-TV /boot/grub/themes/ 
-#sudo mv ~/Downloads/dotfiles/grub_theme/grub /etc/default/
+sudo mv ~/Downloads/dotfiles/grub_theme/CRT-TV /boot/grub/themes/ 
+sudo mv ~/Downloads/dotfiles/grub_theme/grub /etc/default/
 mkdir ~/Pictures/Screenshots
 sudo rm -r -f ~/Downloads/dotfiles
 cd
@@ -72,6 +71,9 @@ sudo chmod +x ~/.config/waybar/scripts/get_weather.sh
 sudo chmod +x ~/.config/waybar/scripts/ticker.py
 sudo chmod +x ~/.config/waybar/scripts/crypto/crypto.py
 
+# GRUB theme
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
 # Install paru and AUR programs
 cd ~/Downloads
 git clone http://aur.archlinux.org/paru.git
@@ -81,12 +83,7 @@ cd
 sudo rm -r -f ~/Downloads/paru
 paru -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family papirus-folders-catppuccin-git chili-sddm-theme python-yfinance
 
-###Something about this is not working, pain in the ass to troubleshoot. Will deal with another time.
-# GRUB theme
-#sudo grub-mkconfig -o /boot/grub/grub.cfg
-
 # SDDM wayland & theme
-
 touch ~/Downloads/10-wayland.conf
 echo "[General]"  >> ~/Downloads/10-wayland.conf
 echo "DisplayServer=wayland"  >> ~/Downloads/10-wayland.conf
