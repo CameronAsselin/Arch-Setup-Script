@@ -79,7 +79,7 @@ cd paru
 makepkg -si
 cd
 sudo rm -r -f ~/Downloads/paru
-paru -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family papirus-folders-catppuccin-git chili-sddm-theme
+paru -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-ubuntu-font-family papirus-folders-catppuccin-git chili-sddm-theme python-yfinance
 
 ###Something about this is not working, pain in the ass to troubleshoot. Will deal with another time.
 # GRUB theme
