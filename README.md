@@ -9,5 +9,8 @@ sudo chmod +x ./Arch-Setup-Script/setup.sh
 rm -rf ./Arch-Setup-Script
 ```
 
-### Hardware
-This build utilizes drivers for AMD CPU and GPU
+### Requirements
+##### Settings
+- Must have access to multilib repository in pacman or else lib32 packages will fail to install. Check the [Arch Wiki](https://wiki.archlinux.org/title/Official_repositories#Enabling_multilib) for more details.
+##### Hardware
+- This build utilizes drivers for AMD CPU and GPU
