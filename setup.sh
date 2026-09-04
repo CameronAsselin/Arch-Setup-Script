@@ -16,7 +16,7 @@ sudo systemctl enable libvirtd.service
 sudo systemctl enable ollama.service
 
 # Ask user if the device is a laptop and install/enable/start tlp if it is
-read -p "Is this a laptop? (y/n - default=y): " answer
+read -p "Is this a laptop? (y/n) (default = y): " answer
 if [ "$answer" = "y" ] || [ "$answer" = "" ] ; then
   sudo pacman -S tlp
   sudo systemctl enable tlp.service
